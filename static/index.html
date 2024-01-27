@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMPT276 Team Project</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var today = new Date().toISOString().split('T')[0];
+
+            // Set the "min" attribute for the input with name "inputGrad"
+            var inputGrad = document.getElementsByName("inputGrad")[0];
+            if (inputGrad) {
+                inputGrad.setAttribute('min', today);
+            }
+
+            // Set the "max" attribute for the input with name "inputStart"
+            var inputStart = document.getElementsByName("inputStart")[0];
+            if (inputStart) {
+                inputStart.setAttribute('max', today);
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Budget Tracker</h1>
+        <div class="setting">
+            <button id="setting_button"><img src="./image/settings.png" alt="Settings"></button>
+            <div class="setting_menu" id="setting_menu" style="display: none;">
+                <button id="darkmode_toggle">Dark Mode</button>
+            </div>
+        </div>
+        
+    </header>
+
+    <main id="pageContainer">
+
+        <section id="inputSection">
+
+            <br>
+            <label id="transport">Transport</label>
+            <input class="inputs" type="text" id=inputTransport>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="transport_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="transport_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="transport_button" value="monthly">
+
+            <br>
+            <label id="food">Food</label>
+            <input class="inputs" type="text" id=inputFood>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="food_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="food_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="food_button" value="monthly">
+
+            <br>
+            <label id="tuition">Tuition</label>
+            <input class="inputs" type="text" id=inputTuition>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="tuition_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="tuition_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="tuition_button" value="monthly">
+
+            <label class="frequency-label" for="semester">Semester:</label>
+            <input type="radio" id="semester" name="tuition_button" value="semester">
+
+            <br>
+            <label id="housing">Housing </label>
+            <input class="inputs" type="text" id=inputHousing>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="housing_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="housing_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="housing_button" value="monthly">
+
+            <br>
+            <label id="hobbies">Hobbies</label>
+            <input class="inputs" type="text" id=inputHobbies>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="hobbies_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="hobbies_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="hobbies_button" value="monthly">
+
+            <br>
+            <label id="gym">Gym</label>
+            <input class="inputs" type="text" id=inputGym>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="gym_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="gym_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="gym_button" value="monthly">
+
+            <br>
+            <label id="phone">Phone</label>
+            <input class="inputs" type="text" id=inputPhone>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="phone_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="phone_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="phone_button" value="monthly">
+
+            <br>
+            <label id="subscriptions">Subscriptions</label>
+            <input class="inputs" type="text" id=inputSubscriptions>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="subscriptions_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="subscriptions_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="subscriptions_button" value="monthly">
+
+            <br>
+            <label id="textbook">Textbooks/Fees</label>
+            <input class="inputs" type="text" id=inputTextbook>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="textbook_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="textbook_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="textbook_button" value="monthly">
+
+            <br>
+            <label id="care">Personal Care</label>
+            <input class="inputs" type="text" id=inputCare>
+            <br>
+
+            <label class="frequency-label" for="daily">Daily:</label>
+            <input type="radio" id="daily" name="care_button" value="daily">
+
+            <label class="frequency-label" for="weekly">Weekly:</label>
+            <input type="radio" id="weekly" name="care_button" value="weekly">
+
+            <label class="frequency-label" for="monthly">Monthly:</label>
+            <input type="radio" id="monthly" name="care_button" value="monthly">
+
+            <br>
+            <label id="start">Start Date of Degree:</label>
+            <input type="date" name="inputStart" id="inputStart">
+
+            <br>
+            <label id="graduation">Expected Graduation Date:</label>
+            <input type="date" name="inputGrad" id="inputGrad">
+            <br>
+        </section>
+
+        <section id="outputSection">
+            <h2>Output</h2>
+
+            <button id="downloadButton">Download Results</button>
+
+            <div id="outputs">
+
+                <label>Average Spending</label>
+                <p id="averageSpending"></p>
+
+                <label>Projected Cost</label>
+                <p id="projectedCosts"></p>
+
+                <label>Costs so far:</label>
+                <p id="currentCosts"></p>
+
+                <div id = "savingsBox">
+                    <h3>Possible Savings:</h3>
+                    <p id="possibleSavings"></p>
+
+                    <label>Projected Costs with Savings:</label>
+                    <p id="projectedCostsWithSavings"></p>
+
+                    <label>Spending Over Average:</label>
+                    <p id="savingsOvertime"></p>
+                </div>
+                
+
+                <h2>Summary</h2>
+                <p id = "summary"></p>
+
+            </div>
+            <button id="calculateBtn">Calculate</button>
+
+            
+
+            <div>
+                <input type="radio" id="daily" name="durationToggle" value="daily" checked>
+                <label for="daily">Daily</label>
+              
+                <input type="radio" id="weekly" name="durationToggle" value="weekly">
+                <label for="weekly">Weekly</label>
+              
+                <input type="radio" id="totalDuration" name="durationToggle" value="totalDuration">
+                <label for="totalDuration">Total</label>        
+            </div>
+            <canvas id="spendingChart" width="400" height="400" style="background-color: #f4f4f4;"></canvas>
+              
+        </section>
+        
+
+    </main>
+
+    <footer>
+        SFU Team Project - Modified version By Sungwi Kim
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./js/calculations.js"></script>
+    <script>
+        document.getElementById("calculateBtn").addEventListener("click", function () {
+            
+            //averageSpending();
+            drawChart();
+
+        });
+    </script>
+    
+
+    <script src="./js/utils.js"></script>
+
+
+</body>
+
+</html>
